@@ -1,10 +1,16 @@
 <template>
-  <div>
+  <div class="container">
     <NavBar />
-    <Tutorial />
+    <IntroBlock />
   </div>
 </template>
 
 <script>
 export default {}
 </script>
+
+<style scoped>
+.container {
+  margin-top: 65px;
+}
+</style>

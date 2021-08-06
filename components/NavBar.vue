@@ -4,17 +4,18 @@
       <img class="logo" src="~/assets/img/logo.png" alt="Logo" />
     </a>
     <div>
-      <a class="nav-link" href="#1">Lien 1</a>
-      <a class="nav-link" href="#2">Lien 2</a>
-      <a class="nav-link" href="#3">Lien 3</a>
-      <a class="nav-link" href="#4">Lien 4</a>
+      <a class="nav-link" href="#1">Accueil</a>
+      <a class="nav-link" href="#2">Savoir-faire</a>
+      <a class="nav-link" href="#3">A propos</a>
+      <a class="nav-link" href="#4">Contact</a>
     </div>
   </nav>
 </template>
 
 <style scoped>
 nav {
-  position: static;
+  position: fixed;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,5 +38,6 @@ nav {
 
 .nav-link {
   margin-left: 40px;
+  text-decoration: none;
 }
 </style>
