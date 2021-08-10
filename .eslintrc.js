@@ -2,19 +2,17 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
     parser: '@babel/eslint-parser',
-    requireConfigFile: false
+    requireConfigFile: false,
   },
-  extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended',
-    'prettier'
-  ],
-  plugins: [
-  ],
-  // add your custom rules here
-  rules: {}
-}
+  extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
+  plugins: ['simple-import-sort', 'import'],
+  rules: {
+    'vue/attribute-hyphenation': 'off',
+    'simple-import-sort/sort': 'error',
+    'import/no-duplicates': 'error',
+  },
+};

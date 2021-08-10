@@ -8,11 +8,20 @@
       <a class="nav-link" href="#2">Savoir-faire</a>
       <a class="nav-link" href="#3">A propos</a>
       <a class="nav-link" href="#4">Contact</a>
+      <Button
+        text="Formulaire"
+        :icon="['far', 'comment-dots']"
+        color="white"
+        backgroundColor="blue"
+        iconColor="white"
+      />
     </div>
   </nav>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import '~/assets/styles/colors';
+
 nav {
   position: fixed;
   box-sizing: border-box;
@@ -37,7 +46,8 @@ nav {
 }
 
 .nav-link {
-  margin-left: 40px;
+  color: $black;
+  margin-right: 40px;
   text-decoration: none;
 }
 </style>

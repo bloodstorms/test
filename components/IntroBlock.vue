@@ -1,12 +1,6 @@
 <template>
   <div class="intro-block">
-    <div class="intro-block__left">
-      <!-- <img
-        class="intro-block__image"
-        src="~/assets/img/intro.jpg"
-        alt="image intro"
-      /> -->
-    </div>
+    <div class="intro-block__left"></div>
     <div class="intro-block__right">
       <h1 class="intro-block__title">Votre litige,<br />nos solutions</h1>
       <p class="intro-block__text">
@@ -27,11 +21,14 @@
       <p class="intro-block__text">
         <span class="bold">La condition : que tous le veuillent.</span>
       </p>
+      <Button text="Savoir-faire" fontWeight="bold" />
     </div>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import '~/assets/styles/colors';
+
 .intro-block {
   display: flex;
 }
@@ -45,7 +42,7 @@
 .intro-block__right {
   width: 45%;
   padding: 40px;
-  background-color: #e0eef6;
+  background-color: $blue-extralight;
 }
 
 .intro-block__title {
@@ -63,6 +60,6 @@
 
 .bold {
   font-weight: bold;
-  color: blue;
+  color: $blue;
 }
 </style>
