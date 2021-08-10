@@ -15,6 +15,10 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# deploy
+$ yarn generate
+$ yarn deploy
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
