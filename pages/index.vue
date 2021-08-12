@@ -2,11 +2,13 @@
   <div class="container">
     <NavBar />
     <IntroBlock />
+    <SolutionsBlock />
   </div>
 </template>
 
 <script>
 import IntroBlock from '~/components/home/IntroBlock.vue';
+import SolutionsBlock from '~/components/home/SolutionsBlock.vue';
 import NavBar from '~/components/ui/NavBar.vue';
 
 export default {
@@ -14,6 +16,7 @@ export default {
   components: {
     NavBar,
     IntroBlock,
+    SolutionsBlock,
   },
 };
 </script>
