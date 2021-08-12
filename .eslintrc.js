@@ -9,10 +9,7 @@ module.exports = {
     requireConfigFile: false,
   },
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
-  plugins: ['simple-import-sort', 'import'],
   rules: {
     'vue/attribute-hyphenation': 'off',
-    'simple-import-sort/sort': 'error',
-    'import/no-duplicates': 'error',
   },
 };
