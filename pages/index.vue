@@ -6,7 +6,15 @@
 </template>
 
 <script>
-export default {}
+import IntroBlock from '~/components/home/IntroBlock.vue';
+import NavBar from '~/components/ui/NavBar.vue';
+
+export default {
+  components: {
+    NavBar,
+    IntroBlock,
+  },
+};
 </script>
 
 <style scoped>

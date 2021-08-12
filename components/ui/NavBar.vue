@@ -19,6 +19,16 @@
   </nav>
 </template>
 
+<script>
+import Button from '~/components/ui/Button.vue';
+
+export default {
+  components: {
+    Button,
+  },
+};
+</script>
+
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
 
