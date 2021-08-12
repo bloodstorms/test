@@ -10,6 +10,7 @@ import IntroBlock from '~/components/home/IntroBlock.vue';
 import NavBar from '~/components/ui/NavBar.vue';
 
 export default {
+  name: 'Home',
   components: {
     NavBar,
     IntroBlock,

@@ -17,6 +17,7 @@ import { getColor } from '~/utils/colors';
 library.add(faChevronRight, faCommentDots);
 
 export default {
+  name: 'Button',
   components: {
     FontAwesomeIcon,
   },
