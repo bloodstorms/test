@@ -80,7 +80,7 @@ export default {
 
 .solutions-block {
   background-color: $grey-extralight;
-  padding: 120px 0 80px 120px;
+  padding: 120px 0 60px 120px;
   position: relative;
 }
 
