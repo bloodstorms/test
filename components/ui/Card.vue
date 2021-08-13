@@ -5,7 +5,7 @@
       :src="require(`@/assets/img/cards/${imageName}.jpg`)"
       :alt="imageName"
     />
-    <Button class="card__button" text="Savoir plus" fontWeight="bold" />
+    <Button class="card__button" text="En savoir plus" fontWeight="bold" />
     <h2 class="card__title">{{ title }}</h2>
     <p class="card__description">{{ description }}</p>
   </div>
