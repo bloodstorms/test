@@ -4,6 +4,7 @@
     <IntroBlock />
     <SolutionsBlock />
     <KeywordsBlock />
+    <ExpertiseBlock />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import IntroBlock from '~/components/home/IntroBlock.vue';
 import SolutionsBlock from '~/components/home/SolutionsBlock.vue';
 import KeywordsBlock from '~/components/home/KeywordsBlock.vue';
+import ExpertiseBlock from '~/components/home/ExpertiseBlock.vue';
 import NavBar from '~/components/ui/NavBar.vue';
 
 export default {
@@ -20,6 +22,7 @@ export default {
     IntroBlock,
     SolutionsBlock,
     KeywordsBlock,
+    ExpertiseBlock,
   },
 };
 </script>
