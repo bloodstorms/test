@@ -1,10 +1,11 @@
 <template>
   <div class="collapsable-item">
     <div class="collapsable-item__header" @click="toggleContent">
-      <h3 class="collapsable-item__title">
-        Vous êtes un <span>Particulier</span>
-      </h3>
-      <FontAwesomeIcon class="collapsable-item__icon" icon="plus" />
+      <h3 class="collapsable-item__title" v-html="title"></h3>
+      <FontAwesomeIcon
+        class="collapsable-item__icon"
+        :icon="showContent ? 'minus' : 'plus'"
+      />
     </div>
     <div
       ref="grow"
@@ -17,22 +18,10 @@
         :class="{ opened: showContent }"
       >
         <div class="collapsable-item__content-left">
-          <p class="collapsable-item__text">Besoin d'un avis sans attendre ?</p>
-          <p class="collapsable-item__text">
-            <b>1.</b> Vous prenez le temps de remplir soigneusement le
-            formulaire (bouton ci-dessous).<br />
-            <b>2.</b> Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit.<br />
-            <b>3.</b> Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit.<br />
-          </p>
-          <p class="collapsable-item__text">
-            Sit magni sunt non doloribus quibusdam ea necessitatibus eaque. Vel
-            quia molestiae ea soluta pariatur eum placeat velit.
-          </p>
+          <div class="collapsable-item__text" v-html="contentText"></div>
           <Button
             class="collapsable-item__button"
-            text="Lorem ipsum"
+            :text="buttonText"
             color="white"
             backgroundColor="blue"
             iconColor="white"
@@ -41,7 +30,7 @@
         <div class="collapsable-item__content-right">
           <img
             class="collapsable-item__image"
-            :src="require(`@/assets/img/accordion/assureur.jpg`)"
+            :src="require(`@/assets/img/accordion/${imageName}.jpg`)"
             alt="l"
           />
         </div>
@@ -57,10 +46,10 @@
 import Button from '@/components/ui/Button.vue';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faPlus);
+library.add(faPlus, faMinus);
 
 export default {
   name: 'CollapsableItem',
@@ -72,6 +61,22 @@ export default {
     showContent: {
       type: Boolean,
       default: false,
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    contentText: {
+      type: String,
+      default: '',
+    },
+    buttonText: {
+      type: String,
+      default: '',
+    },
+    imageName: {
+      type: String,
+      default: '',
     },
   },
   data() {
@@ -135,10 +140,10 @@ export default {
   font-family: 'Oswald', sans-serif;
   font-size: 24px;
   font-weight: 100;
+}
 
-  span {
-    color: $blue;
-  }
+::v-deep .collapsable-item__title span {
+  color: $blue;
 }
 
 .collapsable-item__icon {

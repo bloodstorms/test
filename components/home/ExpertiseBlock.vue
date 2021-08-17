@@ -8,26 +8,26 @@
     </div>
     <div
       class="expertise-block__bottom"
-      :style="{ height: `${120 * 3 + collapsableContentHeight}px` }"
+      :style="{
+        height: `${120 * accordionInfos.length + collapsableContentHeight}px`,
+      }"
     >
       <div
         class="expertise-block__accordion"
-        :style="{ height: `${120 * 3 + collapsableContentHeight}px` }"
+        :style="{
+          height: `${120 * accordionInfos.length + collapsableContentHeight}px`,
+        }"
       >
         <CollapsableItem
-          :showContent="showContent === '1'"
-          @heightUpdated="updateAccordionHeight($event, '1')"
-          @clicked="collapsableItemClicked('1')"
-        />
-        <CollapsableItem
-          :showContent="showContent === '2'"
-          @heightUpdated="updateAccordionHeight($event, '2')"
-          @clicked="collapsableItemClicked('2')"
-        />
-        <CollapsableItem
-          :showContent="showContent === '3'"
-          @heightUpdated="updateAccordionHeight($event, '3')"
-          @clicked="collapsableItemClicked('3')"
+          v-for="item in accordionInfos"
+          :key="item.id"
+          :showContent="showContent === item.id"
+          :title="item.title"
+          :contentText="item.text"
+          :buttonText="item.button"
+          :imageName="item.image"
+          @heightUpdated="updateAccordionHeight($event, item.id)"
+          @clicked="collapsableItemClicked(item.id)"
         />
       </div>
     </div>
@@ -36,6 +36,8 @@
 
 <script>
 import CollapsableItem from '@/components/ui/CollapsableItem.vue';
+
+import accordionInfos from '../text-contents/accordion-infos';
 
 export default {
   name: 'ExpertiseBlock',
@@ -46,6 +48,7 @@ export default {
     return {
       collapsableContentHeight: 0,
       showContent: null,
+      accordionInfos,
     };
   },
   methods: {
