@@ -160,7 +160,7 @@ export default {
 }
 
 .collapsable-item__content-left {
-  padding-right: 20px;
+  padding-right: 50px;
 }
 
 .collapsable-item__image {

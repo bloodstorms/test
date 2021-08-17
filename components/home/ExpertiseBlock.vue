@@ -12,55 +12,35 @@
         height: `${120 * accordionInfos.length + collapsableContentHeight}px`,
       }"
     >
-      <div
-        class="expertise-block__accordion"
+      <Accordion
         :style="{
           height: `${120 * accordionInfos.length + collapsableContentHeight}px`,
         }"
-      >
-        <CollapsableItem
-          v-for="item in accordionInfos"
-          :key="item.id"
-          :showContent="showContent === item.id"
-          :title="item.title"
-          :contentText="item.text"
-          :buttonText="item.button"
-          :imageName="item.image"
-          @heightUpdated="updateAccordionHeight($event, item.id)"
-          @clicked="collapsableItemClicked(item.id)"
-        />
-      </div>
+        @heightUpdated="updateAccordionHeight"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import CollapsableItem from '@/components/ui/CollapsableItem.vue';
+import Accordion from '@/components/ui/Accordion.vue';
 
 import accordionInfos from '@/text-contents/accordion-infos';
 
 export default {
   name: 'ExpertiseBlock',
   components: {
-    CollapsableItem,
+    Accordion,
   },
   data() {
     return {
       collapsableContentHeight: 0,
-      showContent: null,
       accordionInfos,
     };
   },
   methods: {
-    updateAccordionHeight(height, id) {
+    updateAccordionHeight(height) {
       this.collapsableContentHeight = height;
-    },
-    collapsableItemClicked(id) {
-      if (this.showContent === id) {
-        this.showContent = null;
-      } else {
-        this.showContent = id;
-      }
     },
   },
 };
@@ -101,12 +81,9 @@ export default {
   transition: height ease 1s;
 }
 
-.expertise-block__accordion {
-  width: 70%;
-  background-color: white;
+::v-deep .accordion {
   top: -100px;
   position: absolute;
   margin: 0 15%;
-  transition: height ease 1s;
 }
 </style>
