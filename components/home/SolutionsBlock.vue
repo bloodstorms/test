@@ -1,5 +1,5 @@
 <template>
-  <div class="solutions-block">
+  <div id="solutions-block">
     <h2 v-sanitized-html="title" class="solutions-block__text"></h2>
     <FontAwesomeIcon
       v-if="canSwipeRight"
@@ -80,7 +80,7 @@ export default {
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
 
-.solutions-block {
+#solutions-block {
   background-color: $grey-extralight;
   padding: 120px 0 60px 120px;
   position: relative;

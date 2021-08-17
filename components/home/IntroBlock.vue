@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-block">
+  <div id="intro-block">
     <div class="intro-block__left"></div>
     <div class="intro-block__right">
       <h1 v-sanitized-html="title" class="intro-block__title"></h1>
@@ -32,8 +32,9 @@ export default {
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
 
-.intro-block {
+#intro-block {
   display: flex;
+  padding-top: 65px;
 }
 
 .intro-block__left {

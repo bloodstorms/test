@@ -1,5 +1,5 @@
 <template>
-  <div class="keywords-block">
+  <div id="keywords-block">
     <h2 class="keywords-block__word">
       <span class="keywords-block__chevron">></span>
       {{ keyword1 }}
@@ -60,7 +60,7 @@ export default {
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
 
-.keywords-block {
+#keywords-block {
   background-color: $grey-extralight;
   padding: 60px 0 150px 120px;
 }

@@ -91,6 +91,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 0 30px;
+  cursor: pointer;
 }
 
 .icon {
