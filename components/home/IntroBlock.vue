@@ -2,37 +2,29 @@
   <div class="intro-block">
     <div class="intro-block__left"></div>
     <div class="intro-block__right">
-      <h1 class="intro-block__title">Votre litige,<br />nos solutions</h1>
-      <p class="intro-block__text">
-        Une <span class="bold">démarche collective</span> pour une issue
-        commune.
-      </p>
-      <p class="intro-block__text">
-        Des solutions <span class="bold">amiables</span>, plus
-        <span class="bold">économiques</span> et plus
-        <span class="bold">rapides</span> existent pour résoudre un litige en
-        évitant un procès toujours long, aléatoire et coûteux.
-      </p>
-      <p class="intro-block__text">
-        Nous pouvons vous guider et vous assister, au travers de
-        <span class="bold">solutions juridiquement éprouvées</span>, pour mettre
-        en place une telle démarche.
-      </p>
-      <p class="intro-block__text">
-        <span class="bold">La condition : que tous le veuillent.</span>
-      </p>
-      <Button text="Savoir-faire" fontWeight="bold" />
+      <h1 v-sanitized-html="title" class="intro-block__title"></h1>
+      <div v-sanitized-html="text" class="intro-block__text"></div>
+      <Button :text="buttonText" fontWeight="bold" />
     </div>
   </div>
 </template>
 
 <script>
-import Button from '~/components/ui/Button.vue';
+import Button from '@/components/ui/Button.vue';
+
+import { buttonText, title, text } from '@/text-contents/intro';
 
 export default {
   name: 'IntroBlock',
   components: {
     Button,
+  },
+  data() {
+    return {
+      title,
+      text,
+      buttonText,
+    };
   },
 };
 </script>
@@ -66,10 +58,13 @@ export default {
 
 .intro-block__text {
   font-size: 23px;
+}
+
+::v-deep .intro-block__text p {
   margin: 40px 0;
 }
 
-.bold {
+::v-deep .intro-block__text span {
   font-weight: bold;
   color: $blue;
 }

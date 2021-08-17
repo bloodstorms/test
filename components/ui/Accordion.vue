@@ -17,7 +17,7 @@
 <script>
 import CollapsableItem from '@/components/ui/CollapsableItem.vue';
 
-import accordionInfos from '@/text-contents/accordion-infos';
+import { accordionInfos } from '~/text-contents/expertise';
 
 export default {
   name: 'Accordion',

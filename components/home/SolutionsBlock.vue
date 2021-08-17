@@ -1,11 +1,6 @@
 <template>
   <div class="solutions-block">
-    <h2 class="solutions-block__text">
-      Nous proposons l'étude<br />
-      et l'élaboration de solutions<br />
-      au travers de nouveaux modes<br />
-      de règlements alternatifs
-    </h2>
+    <h2 v-sanitized-html="title" class="solutions-block__text"></h2>
     <FontAwesomeIcon
       v-if="canSwipeRight"
       class="
@@ -29,6 +24,7 @@
         :imageName="card.image"
         :title="card.title"
         :description="card.description"
+        :buttonText="card.button"
         margin="0 100px 0 0"
       />
     </div>
@@ -36,8 +32,11 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
 import Card from '@/components/ui/Card.vue';
 import scrollTo from '@/utils/scrollTo';
+import VSanitizedHTML from '@/directives/v-sanitized-html';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -46,7 +45,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import cardInfos from '@/text-contents/card-infos';
+import { title, cardInfos } from '@/text-contents/solutions';
+
+Vue.use(VSanitizedHTML);
 
 library.add(faChevronRight, faChevronLeft);
 
@@ -60,6 +61,7 @@ export default {
     return {
       canSwipeRight: true,
       cardInfos,
+      title,
     };
   },
   methods: {

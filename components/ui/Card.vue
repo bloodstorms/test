@@ -5,7 +5,7 @@
       :src="require(`@/assets/img/cards/${imageName}.jpg`)"
       :alt="imageName"
     />
-    <Button class="card__button" text="En savoir plus" fontWeight="bold" />
+    <Button class="card__button" :text="buttonText" fontWeight="bold" />
     <h2 class="card__title">{{ title }}</h2>
     <p class="card__description">{{ description }}</p>
   </div>
@@ -29,6 +29,10 @@ export default {
       default: '',
     },
     description: {
+      type: String,
+      default: '',
+    },
+    buttonText: {
       type: String,
       default: '',
     },

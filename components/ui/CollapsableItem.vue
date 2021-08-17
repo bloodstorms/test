@@ -1,7 +1,7 @@
 <template>
   <div class="collapsable-item">
     <div class="collapsable-item__header" @click="toggleContent">
-      <h3 class="collapsable-item__title" v-html="title"></h3>
+      <h3 v-sanitized-html="title" class="collapsable-item__title"></h3>
       <FontAwesomeIcon
         class="collapsable-item__icon"
         :icon="showContent ? 'minus' : 'plus'"
@@ -18,7 +18,10 @@
         :class="{ opened: showContent }"
       >
         <div class="collapsable-item__content-left">
-          <div class="collapsable-item__text" v-html="contentText"></div>
+          <div
+            v-sanitized-html="contentText"
+            class="collapsable-item__text"
+          ></div>
           <Button
             class="collapsable-item__button"
             :text="buttonText"
@@ -42,6 +45,9 @@
 
 <script>
 // import { ResizeObserver } from '@juggle/resize-observer';
+import Vue from 'vue';
+
+import VSanitizedHTML from '@/directives/v-sanitized-html';
 
 import Button from '@/components/ui/Button.vue';
 
@@ -51,8 +57,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faPlus, faMinus);
 
+Vue.use(VSanitizedHTML);
+
 export default {
   name: 'CollapsableItem',
+  directives: { VSanitizedHTML },
   components: {
     FontAwesomeIcon,
     Button,

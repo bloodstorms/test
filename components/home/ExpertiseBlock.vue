@@ -2,7 +2,7 @@
   <div class="expertise-block">
     <div class="expertise-block__container">
       <div class="expertise-block__left">
-        <h1 class="expertise-block__title">Notre<br />savoir-faire</h1>
+        <h1 v-sanitized-html="title" class="expertise-block__title"></h1>
       </div>
       <div class="expertise-block__right"></div>
     </div>
@@ -23,9 +23,14 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
+import VSanitizedHTML from '@/directives/v-sanitized-html';
 import Accordion from '@/components/ui/Accordion.vue';
 
-import accordionInfos from '@/text-contents/accordion-infos';
+import { title, accordionInfos } from '@/text-contents/expertise';
+
+Vue.use(VSanitizedHTML);
 
 export default {
   name: 'ExpertiseBlock',
@@ -35,6 +40,7 @@ export default {
   data() {
     return {
       collapsableContentHeight: 0,
+      title,
       accordionInfos,
     };
   },

@@ -2,23 +2,20 @@
   <div class="keywords-block">
     <h2 class="keywords-block__word">
       <span class="keywords-block__chevron">></span>
-      Proposer
+      {{ keyword1 }}
     </h2>
     <h2 class="keywords-block__word">
       <span class="keywords-block__plus">+</span>
-      Accompagner
+      {{ keyword2 }}
     </h2>
     <h2 class="keywords-block__word">
       <span class="keywords-block__amp">&amp;</span>
-      Conseiller
+      {{ keyword3 }}
     </h2>
     <div class="keywords-block__button-container">
-      <p class="keywords-block__text">
-        Lorem ipsum dolor sit amet. Sit magni sunt non doloribus quibusdam ea
-        necessitatibus eaque.<br />Vel quia molestiae ea soluta pariatur.
-      </p>
+      <p v-sanitized-html="text" class="keywords-block__text"></p>
       <Button
-        text="Lorem ipsum"
+        :text="buttonText"
         color="white"
         backgroundColor="blue"
         iconColor="white"
@@ -28,12 +25,34 @@
 </template>
 
 <script>
-import Button from '~/components/ui/Button.vue';
+import Vue from 'vue';
+
+import VSanitizedHTML from '@/directives/v-sanitized-html';
+
+import Button from '@/components/ui/Button.vue';
+import {
+  keyword1,
+  keyword2,
+  keyword3,
+  text,
+  buttonText,
+} from '@/text-contents/keywords';
+
+Vue.use(VSanitizedHTML);
 
 export default {
   name: 'KeywordsBlock',
   components: {
     Button,
+  },
+  data() {
+    return {
+      keyword1,
+      keyword2,
+      keyword3,
+      text,
+      buttonText,
+    };
   },
 };
 </script>

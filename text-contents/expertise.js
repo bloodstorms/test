@@ -1,4 +1,6 @@
-export default [
+export const title = 'Notre<br/>savoir-faire';
+
+export const accordionInfos = [
   {
     id: '1',
     title: 'Vous êtes un <span>Particulier</span>',
