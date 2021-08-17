@@ -2,7 +2,7 @@
   <div id="expertise-block">
     <div class="expertise-block__container">
       <div class="expertise-block__left">
-        <h1 v-sanitized-html="title" class="expertise-block__title"></h1>
+        <h2 v-sanitized-html="title" class="expertise-block__title"></h2>
       </div>
       <div class="expertise-block__right"></div>
     </div>
@@ -13,6 +13,7 @@
       }"
     >
       <Accordion
+        :accordionInfos="accordionInfos"
         :style="{
           height: `${120 * accordionInfos.length + collapsableContentHeight}px`,
         }"
@@ -83,13 +84,13 @@ export default {
 .expertise-block__bottom {
   position: relative;
   width: 100%;
-  background-color: $blue-extralight;
+  background-color: $grey-extralight;
   transition: height ease 1s;
 }
 
 ::v-deep .accordion {
   top: -100px;
   position: absolute;
-  margin: 0 15%;
+  margin: 0 10%;
 }
 </style>

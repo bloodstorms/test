@@ -17,12 +17,16 @@
         class="collapsable-item__content"
         :class="{ opened: showContent }"
       >
-        <div class="collapsable-item__content-left">
+        <div
+          class="collapsable-item__content-left"
+          :class="{ only: !imageName }"
+        >
           <div
             v-sanitized-html="contentText"
             class="collapsable-item__text"
           ></div>
           <Button
+            v-if="buttonText"
             class="collapsable-item__button"
             :text="buttonText"
             color="white"
@@ -30,7 +34,7 @@
             iconColor="white"
           />
         </div>
-        <div class="collapsable-item__content-right">
+        <div v-if="imageName" class="collapsable-item__content-right">
           <img
             class="collapsable-item__image"
             :src="require(`@/assets/img/accordion/${imageName}.jpg`)"
@@ -122,6 +126,8 @@ export default {
   padding: 20px 50px 0 50px;
 
   &:last-child {
+    margin-bottom: 20px;
+
     .collapsable-item__separator {
       display: none;
     }
@@ -170,6 +176,24 @@ export default {
 
 .collapsable-item__content-left {
   padding-right: 50px;
+
+  &.only {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+::v-deep .collapsable-item__text {
+  ul {
+    padding-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  li {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
 }
 
 .collapsable-item__image {

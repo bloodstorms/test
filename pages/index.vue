@@ -5,15 +5,17 @@
     <SolutionsBlock />
     <KeywordsBlock />
     <ExpertiseBlock />
+    <AboutBlock />
   </div>
 </template>
 
 <script>
-import IntroBlock from '~/components/home/IntroBlock.vue';
-import SolutionsBlock from '~/components/home/SolutionsBlock.vue';
-import KeywordsBlock from '~/components/home/KeywordsBlock.vue';
-import ExpertiseBlock from '~/components/home/ExpertiseBlock.vue';
-import NavBar from '~/components/ui/NavBar.vue';
+import IntroBlock from '@/components/home/IntroBlock.vue';
+import SolutionsBlock from '@/components/home/SolutionsBlock.vue';
+import KeywordsBlock from '@/components/home/KeywordsBlock.vue';
+import ExpertiseBlock from '@/components/home/ExpertiseBlock.vue';
+import AboutBlock from '@/components/home/AboutBlock.vue';
+import NavBar from '@/components/ui/NavBar.vue';
 
 export default {
   name: 'Home',
@@ -23,6 +25,7 @@ export default {
     SolutionsBlock,
     KeywordsBlock,
     ExpertiseBlock,
+    AboutBlock,
   },
 };
 </script>
