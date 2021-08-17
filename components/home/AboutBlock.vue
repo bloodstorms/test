@@ -1,5 +1,5 @@
 <template>
-  <div id="about-block">
+  <div id="a-propos" class="about-block">
     <h2 v-sanitized-html="title" class="about-block__title"></h2>
     <h3 v-sanitized-html="subtitle" class="about-block__subtitle"></h3>
     <div class="about-block__accordions">
@@ -48,7 +48,7 @@ export default {
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
 
-#about-block {
+.about-block {
   background-color: $blue-extralight;
   padding: 80px 10%;
 }
@@ -70,6 +70,7 @@ export default {
 .about-block__accordions {
   display: flex;
   justify-content: space-between;
+  // align-items: flex-start;
 }
 
 // Custom styles

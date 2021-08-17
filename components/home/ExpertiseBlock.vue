@@ -1,5 +1,5 @@
 <template>
-  <div id="expertise-block">
+  <div id="savoir-faire" class="expertise-block">
     <div class="expertise-block__container">
       <div class="expertise-block__left">
         <h2 v-sanitized-html="title" class="expertise-block__title"></h2>

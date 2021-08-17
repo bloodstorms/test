@@ -4,10 +4,10 @@
       <img class="logo" src="~/assets/img/logo.png" alt="Logo" />
     </a>
     <div>
-      <a class="nav-link" href="#intro-block">Accueil</a>
-      <a class="nav-link" href="#expertise-block">Savoir-faire</a>
-      <a class="nav-link" href="#about-block">A propos</a>
-      <a class="nav-link" href="#contact-block">Contact</a>
+      <a class="nav-link" href="#accueil">Accueil</a>
+      <a class="nav-link" href="#savoir-faire">Savoir-faire</a>
+      <a class="nav-link" href="#a-propos">A propos</a>
+      <a class="nav-link" href="#contact">Contact</a>
       <Button
         text="Formulaire"
         :icon="['far', 'comment-dots']"
