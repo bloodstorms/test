@@ -46,7 +46,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import cardInfos from '../text-contents/card-infos';
+import cardInfos from '@/text-contents/card-infos';
 
 library.add(faChevronRight, faChevronLeft);
 
