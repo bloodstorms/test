@@ -61,7 +61,7 @@ export default {
 }
 
 .about-block__subtitle {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 100;
   line-height: 1.3;
   margin: 50px 0;
@@ -70,7 +70,7 @@ export default {
 .about-block__accordions {
   display: flex;
   justify-content: space-between;
-  // align-items: flex-start;
+  align-items: flex-start;
 }
 
 // Custom styles
