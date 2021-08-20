@@ -1,13 +1,14 @@
 <template>
   <nav>
-    <a class="logo-link" href="#0">
+    <a v-smooth-scroll class="logo-link" href="#accueil">
       <img class="logo" src="~/assets/img/logo.png" alt="Logo" />
     </a>
     <div>
-      <a class="nav-link" href="#accueil">Accueil</a>
-      <a class="nav-link" href="#savoir-faire">Savoir-faire</a>
-      <a class="nav-link" href="#a-propos">À propos de nous</a>
-      <a class="nav-link" href="#contact">Contact</a>
+      <a v-smooth-scroll class="nav-link" href="#accueil">Accueil</a>
+      <a v-smooth-scroll class="nav-link" href="#solutions">Solutions</a>
+      <a v-smooth-scroll class="nav-link" href="#savoir-faire">Savoir-faire</a>
+      <a v-smooth-scroll class="nav-link" href="#a-propos">À propos de nous</a>
+      <a v-smooth-scroll class="nav-link" href="#contact">Contact</a>
       <Button
         text="Formulaire"
         :icon="['far', 'comment-dots']"
@@ -23,7 +24,12 @@
 </template>
 
 <script>
-import Button from '~/components/ui/Button.vue';
+import Vue from 'vue';
+import VueSmoothScroll from 'vue2-smooth-scroll';
+
+import Button from '@/components/ui/Button.vue';
+
+Vue.use(VueSmoothScroll);
 
 export default {
   name: 'NavBar',
