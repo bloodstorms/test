@@ -1,5 +1,5 @@
 <template>
-  <div class="collapsable-item">
+  <div class="collapsable-item" :class="{ opened: showContent }">
     <div class="collapsable-item__header" @click="toggleContent">
       <h3 v-sanitized-html="title" class="collapsable-item__title"></h3>
       <FontAwesomeIcon
@@ -12,11 +12,7 @@
       class="collapsable-item__grow"
       :style="{ height: showContent ? contentHeight + 'px' : 0 }"
     >
-      <div
-        ref="content"
-        class="collapsable-item__content"
-        :class="{ opened: showContent }"
-      >
+      <div ref="content" class="collapsable-item__content">
         <div
           class="collapsable-item__content-left"
           :class="{ only: !imageName }"
@@ -135,6 +131,18 @@ export default {
       display: none;
     }
   }
+
+  &.opened {
+    .collapsable-item__title {
+      color: $blue;
+    }
+    ::v-deep .collapsable-item__title span {
+      color: $black;
+    }
+    .collapsable-item__icon {
+      color: $blue;
+    }
+  }
 }
 
 .collapsable-item__header,
@@ -158,10 +166,6 @@ export default {
   font-family: 'Oswald', sans-serif;
   font-size: 24px;
   font-weight: 100;
-}
-
-::v-deep .collapsable-item__title span {
-  color: $blue;
 }
 
 .collapsable-item__icon {

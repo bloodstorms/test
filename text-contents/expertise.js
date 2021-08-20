@@ -3,7 +3,7 @@ export const title = 'Notre<br/>savoir-faire';
 export const accordionInfos = [
   {
     id: '1',
-    title: 'Vous êtes un <span>Particulier</span>',
+    title: '<span>Vous êtes un</span> Particulier',
     text: `
       <p>Besoin d'un avis sans attendre ?</p>
       <p>
@@ -18,7 +18,7 @@ export const accordionInfos = [
   },
   {
     id: '2',
-    title: '<span>Société / Professionel</span>',
+    title: 'Société / Professionel',
     text: `
       <p>Lorem ipsum dolor sit amet, consectetur ?</p>
       <p>
@@ -34,7 +34,7 @@ export const accordionInfos = [
   },
   {
     id: '3',
-    title: '<span>Assureur</span>',
+    title: 'Assureur',
     text: `
       <p>Lorem ipsum dolor sit amet, consectetur ?</p>
       <p>
@@ -50,7 +50,7 @@ export const accordionInfos = [
   },
   {
     id: '4',
-    title: '<span>Professionel du droit</span>',
+    title: 'Professionel du droit',
     text: `
       <p>Lorem ipsum dolor sit amet, consectetur ?</p>
       <p>
