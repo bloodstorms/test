@@ -17,8 +17,11 @@
       <Button
         :text="buttonText"
         color="white"
+        colorHover="black"
         backgroundColor="blue"
-        iconColor="white"
+        backgroundColorHover="green"
+        iconColor="green"
+        iconColorHover="blue"
       />
     </div>
   </div>

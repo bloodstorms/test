@@ -6,14 +6,17 @@
     <div>
       <a class="nav-link" href="#accueil">Accueil</a>
       <a class="nav-link" href="#savoir-faire">Savoir-faire</a>
-      <a class="nav-link" href="#a-propos">A propos</a>
+      <a class="nav-link" href="#a-propos">À propos de nous</a>
       <a class="nav-link" href="#contact">Contact</a>
       <Button
         text="Formulaire"
         :icon="['far', 'comment-dots']"
         color="white"
+        colorHover="black"
         backgroundColor="blue"
-        iconColor="white"
+        backgroundColorHover="green"
+        iconColor="green"
+        iconColorHover="blue"
       />
     </div>
   </nav>

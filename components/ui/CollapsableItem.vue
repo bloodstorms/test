@@ -30,8 +30,11 @@
             class="collapsable-item__button"
             :text="buttonText"
             color="white"
+            colorHover="black"
             backgroundColor="blue"
-            iconColor="white"
+            backgroundColorHover="green"
+            iconColor="green"
+            iconColorHover="blue"
           />
         </div>
         <div v-if="imageName" class="collapsable-item__content-right">

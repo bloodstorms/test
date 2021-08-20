@@ -1,20 +1,32 @@
 <template>
   <div id="solutions" class="solutions-block">
     <h2 v-sanitized-html="title" class="solutions-block__text"></h2>
-    <FontAwesomeIcon
+    <Button
       v-if="canSwipeRight"
       class="
         solutions-block__scroll-button solutions-block__scroll-button--right
       "
       icon="chevron-right"
+      backgroundColor="white"
+      backgroundColorHover="black"
+      borderColor="black"
+      borderColorHover="black"
+      iconColor="black"
+      iconColorHover="white"
       @click="swipeRight"
     />
-    <FontAwesomeIcon
+    <Button
       v-else
       class="
         solutions-block__scroll-button solutions-block__scroll-button--left
       "
       icon="chevron-left"
+      backgroundColor="white"
+      backgroundColorHover="black"
+      borderColor="black"
+      borderColorHover="black"
+      iconColor="black"
+      iconColorHover="white"
       @click="swipeLeft"
     />
     <div ref="scrollableContent" class="solutions-block__cards">
@@ -34,28 +46,20 @@
 <script>
 import Vue from 'vue';
 
+import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
 import scrollTo from '@/utils/scrollTo';
 import VSanitizedHTML from '@/directives/v-sanitized-html';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faChevronRight,
-  faChevronLeft,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import { title, cardInfos } from '@/text-contents/solutions';
 
 Vue.use(VSanitizedHTML);
 
-library.add(faChevronRight, faChevronLeft);
-
 export default {
   name: 'SolutionsBlock',
   components: {
+    Button,
     Card,
-    FontAwesomeIcon,
   },
   data() {
     return {
@@ -95,8 +99,6 @@ export default {
 
 .solutions-block__scroll-button {
   position: absolute;
-  color: $blue;
-  border: 3px solid $blue;
   border-radius: 50%;
   height: 60px;
   width: 60px;
