@@ -36,7 +36,7 @@ export default {
       type: String,
       default: 'blue',
       validator: (value) => {
-        return ['blue', 'white'].includes(value);
+        return ['black', 'blue', 'green'].includes(value);
       },
     },
     borderColor: {
@@ -81,14 +81,14 @@ export default {
       type: String,
       default: 'blue',
       validator: (value) => {
-        return ['blue', 'green'].includes(value);
+        return ['black', 'blue', 'green'].includes(value);
       },
     },
     iconColorHover: {
       type: String,
       default: 'green',
       validator: (value) => {
-        return ['blue', 'green'].includes(value);
+        return ['blue', 'green', 'white'].includes(value);
       },
     },
     text: {
