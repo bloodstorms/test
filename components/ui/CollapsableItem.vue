@@ -164,6 +164,7 @@ export default {
 
 .collapsable-item__title {
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 0;
   font-size: 24px;
   font-weight: 100;
 }

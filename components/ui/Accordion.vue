@@ -76,6 +76,7 @@ export default {
 
 .accordion__title {
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 0;
   font-size: 50px;
   margin: 0;
 }

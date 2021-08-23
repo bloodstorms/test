@@ -71,6 +71,7 @@ export default {
 .keywords-block__word {
   position: relative;
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 0;
   font-size: 150px;
   margin: 0;
   text-transform: uppercase;

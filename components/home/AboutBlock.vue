@@ -57,6 +57,7 @@ export default {
   font-family: 'Oswald', sans-serif;
   font-size: 50px;
   line-height: 1.1;
+  letter-spacing: 0;
   margin: 0;
 }
 

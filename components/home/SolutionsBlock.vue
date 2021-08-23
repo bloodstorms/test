@@ -92,6 +92,7 @@ export default {
 
 .solutions-block__text {
   font-family: 'Oswald', sans-serif;
+  letter-spacing: 0;
   font-size: 50px;
   line-height: 1.2;
   margin: 0;

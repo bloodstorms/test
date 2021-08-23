@@ -80,6 +80,7 @@ export default {
 .intro-block__title {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
+  letter-spacing: 0;
   font-size: 74px;
   line-height: 1.2;
   margin-top: 0;
