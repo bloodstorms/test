@@ -45,11 +45,13 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['vue2-smooth-scroll'],
+  },
 
   // Github pages
   target: 'static',
   router: {
     base: '/arbitrex/',
   },
-}
+};
