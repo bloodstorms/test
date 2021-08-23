@@ -87,7 +87,7 @@ export default {
   @include device-portrait {
     position: absolute;
     color: white;
-    text-shadow: 2px 2px 5px $black;
+    text-shadow: 1px 1px 2px $black;
   }
   @include phone {
     font-size: 45px;
