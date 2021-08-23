@@ -1,8 +1,8 @@
 export const title = `
-  Nous proposons l'étude<br />
-  et l'élaboration de solutions<br />
-  au travers de nouveaux modes<br />
-  de règlements alternatifs
+  Nous proposons l'étude et l'élaboration<br />
+  de solutions au travers de nouveaux<br />
+  modes de règlements alternatifs par<br />
+  une commission d’experts
 `;
 
 export const cardInfos = [
