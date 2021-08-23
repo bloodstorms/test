@@ -31,10 +31,15 @@ export default {
 
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
+@import '~/assets/styles/mixins';
 
 .intro-block {
   display: flex;
   padding-top: 65px;
+
+  @include device-portrait {
+    flex-direction: column;
+  }
 }
 
 .intro-block__left {
@@ -42,11 +47,34 @@ export default {
   background-image: url('~/assets/img/intro.jpg');
   background-size: cover;
   background-position: center;
+
+  @include device-portrait {
+    width: 100%;
+  }
+
+  @include phone {
+    height: 300px;
+  }
+
+  @include tablet-portrait {
+    height: 550px;
+  }
 }
+
 .intro-block__right {
   width: 45%;
   padding: 40px;
   background-color: $blue-extralight;
+
+  @include device-portrait {
+    width: 100%;
+  }
+  @include phone {
+    padding: 20px;
+  }
+  @include tablet-landscape {
+    padding: 30px;
+  }
 }
 
 .intro-block__title {
@@ -55,14 +83,53 @@ export default {
   font-size: 74px;
   line-height: 1.2;
   margin-top: 0;
+
+  @include device-portrait {
+    position: absolute;
+    color: white;
+    text-shadow: 2px 2px 5px $black;
+  }
+  @include phone {
+    font-size: 45px;
+    top: 240px;
+    left: 20px;
+  }
+  @include tablet-portrait {
+    font-size: 65px;
+    top: 420px;
+    left: 40px;
+  }
+  @include tablet-landscape {
+    font-size: 60px;
+  }
 }
 
 .intro-block__text {
   font-size: 23px;
+
+  @include phone {
+    font-size: 16px;
+  }
+  @include tablet-portrait {
+    font-size: 22px;
+  }
+  @include tablet-landscape {
+    font-size: 20px;
+  }
 }
 
 ::v-deep .intro-block__text p {
   margin: 40px 0;
+
+  @include phone {
+    margin: 20px 0;
+  }
+  @include tablet-portrait {
+    margin: 25px 0;
+  }
+  @include tablet-landscape {
+    margin: 20px 0;
+  }
 }
 
 ::v-deep .intro-block__text span {
