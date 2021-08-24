@@ -70,11 +70,11 @@ export default {
   },
   methods: {
     swipeLeft() {
-      scrollTo(this.$refs.scrollableContent, -1000, 600);
+      scrollTo(this.$refs.scrollableContent, -1500, 800);
       this.canSwipeRight = true;
     },
     swipeRight() {
-      scrollTo(this.$refs.scrollableContent, 1000, 600);
+      scrollTo(this.$refs.scrollableContent, 1500, 800);
       this.canSwipeRight = false;
     },
   },
@@ -83,11 +83,22 @@ export default {
 
 <style scoped lang="scss">
 @import '~/assets/styles/colors';
+@import '~/assets/styles/mixins';
 
 .solutions-block {
   background-color: $grey-extralight;
   padding: 120px 0 60px 120px;
   position: relative;
+
+  @include phone {
+    padding: 20px 0 50px 20px;
+  }
+  @include tablet-portrait {
+    padding: 40px 0 50px 40px;
+  }
+  @include tablet-landscape {
+    padding: 80px 0 60px 80px;
+  }
 }
 
 .solutions-block__text {
@@ -96,6 +107,16 @@ export default {
   font-size: 50px;
   line-height: 1.2;
   margin: 0;
+
+  @include phone {
+    font-size: 23px;
+  }
+  @include tablet-portrait {
+    font-size: 40px;
+  }
+  @include tablet-landscape {
+    font-size: 45px;
+  }
 }
 
 .solutions-block__scroll-button {
@@ -105,15 +126,42 @@ export default {
   width: 60px;
   padding: 14px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .solutions-block__scroll-button--right {
   top: 300px;
   right: 120px;
+
+  @include phone {
+    top: 300px;
+    right: 20px;
+  }
+  @include tablet-portrait {
+    top: 170px;
+    right: 40px;
+  }
+  @include tablet-landscape {
+    top: 235px;
+    right: 80px;
+  }
 }
 .solutions-block__scroll-button--left {
   top: 300px;
   right: 120px;
+
+  @include phone {
+    top: 300px;
+    right: 20px;
+  }
+  @include tablet-portrait {
+    top: 170px;
+    right: 40px;
+  }
+  @include tablet-landscape {
+    top: 235px;
+    right: 80px;
+  }
 }
 
 .solutions-block__cards {

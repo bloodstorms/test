@@ -45,11 +45,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/mixins';
+
 .card {
   position: relative;
   height: 500px;
   width: 470px;
   flex-shrink: 0;
+
+  @include phone {
+    height: 500px;
+    width: 100%;
+  }
 }
 
 .card__image {
@@ -61,6 +68,10 @@ export default {
   position: absolute;
   top: 320px;
   right: 20px;
+
+  @include phone {
+    top: 230px;
+  }
 }
 
 .card__title {
