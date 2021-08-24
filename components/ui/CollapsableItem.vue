@@ -120,9 +120,14 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/styles/colors';
+@import '~/assets/styles/mixins';
 
 .collapsable-item {
   padding: 20px 50px 0 50px;
+
+  @include phone {
+    padding: 20px 20px 0 20px;
+  }
 
   &:last-child {
     margin-bottom: 20px;
@@ -167,6 +172,10 @@ export default {
   letter-spacing: 0;
   font-size: 24px;
   font-weight: 100;
+
+  @include phone {
+    font-size: 23px;
+  }
 }
 
 .collapsable-item__icon {
@@ -182,6 +191,12 @@ export default {
   width: 50%;
 }
 
+.collapsable-item__content-right {
+  @include device-portrait {
+    display: none;
+  }
+}
+
 .collapsable-item__content-left {
   padding-right: 50px;
 
@@ -189,9 +204,18 @@ export default {
     padding-right: 0;
     width: 100%;
   }
+
+  @include device-portrait {
+    padding-right: 0;
+    width: 100%;
+  }
 }
 
 ::v-deep .collapsable-item__text {
+  @include phone {
+    font-size: 14px;
+  }
+
   ul {
     padding-left: 15px;
     margin-top: 15px;
