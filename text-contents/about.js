@@ -13,11 +13,11 @@ export const accordionsList = [
         title: 'Formation',
         text: `
           <ul>
-            <li>Conservatoire National des Arts et métiers</li>
-            <li>ESTACA : Ecole Supérieure des Techniques et de Construction Automobile</li>
-            <li>Brevet professionnel d’Expert automobile</li>
-            <li>Certificat Expertise Judiciaire à Sciences Po Aix</li>
-            <li>CESU Aspects Juridiques des Véhicules autonomes</li>
+            <li>Ingénieur ESTACA - Ecole Supérieure des Techniques Aéronautiques et de Construction Automobile</li>
+            <li>Certificat 3eme cycle Science Technique et Société - Conservatoire National des Arts et Métiers -Sorbonne</li>
+            <li>Brevet professionnel d’Expert en automobile</li>
+            <li>Certificat Expertise Judiciaire - Sciences Po Aix</li>
+            <li>CESU Aspects Juridiques des Véhicules autonomes - AMU</li>
           </ul>
         `,
       },
@@ -53,6 +53,7 @@ export const accordionsList = [
         text: `
           <ul>
             <li>BAC agricole avec option mécanique agricole</li>
+            <li>1e année DUT Sciences de la Matière - Faculté de Sciences - Montpellier</li>
             <li>BTS MAVA (option automobile)</li>
             <li>Post BTS carrosserie</li>
             <li>Diplôme Expert automobile</li>

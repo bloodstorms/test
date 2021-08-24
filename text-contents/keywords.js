@@ -3,8 +3,7 @@ export const keyword2 = 'Accompagner';
 export const keyword3 = 'Conseiller';
 
 export const text = `
-  Lorem ipsum dolor sit amet. Sit magni sunt non doloribus quibusdam ea
-  necessitatibus eaque.<br />Vel quia molestiae ea soluta pariatur.
+  ARBITR’EX,<br>La solution à tous vos litiges
 `;
 
 export const buttonText = 'Lorem ipsum';
