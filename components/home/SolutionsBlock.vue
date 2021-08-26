@@ -101,19 +101,20 @@ export default {
 .solutions-block__text {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0;
-  font-size: 50px;
+  font-size: 47px;
+  font-weight: 500;
   line-height: 1.2;
   margin: 0 0 70px 0;
 
   @include phone {
-    font-size: 23px;
-    margin: 0 0 50px 0;
+    font-size: 20px;
+    margin: 0 0 60px 0;
   }
   @include tablet-portrait {
-    font-size: 40px;
+    font-size: 38px;
   }
   @include tablet-landscape {
-    font-size: 45px;
+    font-size: 42px;
   }
 }
 
@@ -127,10 +128,15 @@ export default {
   z-index: 1;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+
+  @include phone {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 .solutions-block__scroll-button--right {
-  top: 300px;
+  top: 285px;
   right: 120px;
 
   @include phone {
@@ -138,16 +144,16 @@ export default {
     right: 5px;
   }
   @include tablet-portrait {
-    top: 210px;
+    top: 200px;
     right: 40px;
   }
   @include tablet-landscape {
-    top: 235px;
+    top: 220px;
     right: 80px;
   }
 }
 .solutions-block__scroll-button--left {
-  top: 300px;
+  top: 285px;
   right: 200px;
 
   @include phone {
@@ -155,11 +161,11 @@ export default {
     right: 70px;
   }
   @include tablet-portrait {
-    top: 210px;
+    top: 200px;
     right: 110px;
   }
   @include tablet-landscape {
-    top: 235px;
+    top: 220px;
     right: 160px;
   }
 }

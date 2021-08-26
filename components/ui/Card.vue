@@ -67,7 +67,7 @@ export default {
 .card__title {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0;
-  font-weight: 100;
+  font-weight: 400;
   font-size: 24px;
 }
 

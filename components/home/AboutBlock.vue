@@ -66,7 +66,8 @@ export default {
 
 .about-block__title {
   font-family: 'Oswald', sans-serif;
-  font-size: 50px;
+  font-size: 52px;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0;
   margin: 0;
@@ -78,7 +79,6 @@ export default {
 
 .about-block__subtitle {
   font-size: 23px;
-  font-weight: 100;
   line-height: 1.3;
   margin: 50px 0;
 

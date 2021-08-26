@@ -88,6 +88,7 @@ export default {
   text-transform: uppercase;
   margin-left: 120px;
   line-height: 1.5;
+  font-weight: 500;
 
   @include phone {
     font-size: 40px;

@@ -78,6 +78,7 @@ export default {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0;
   font-size: 50px;
+  font-weight: 500;
   margin: 0;
 }
 </style>

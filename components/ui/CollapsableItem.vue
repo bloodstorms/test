@@ -171,7 +171,7 @@ export default {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 0;
   font-size: 24px;
-  font-weight: 100;
+  font-weight: 400;
 
   @include phone {
     font-size: 23px;

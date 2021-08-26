@@ -99,7 +99,8 @@ export default {
 .expertise-block__title {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  font-size: 100px;
+  font-size: 96px;
+  font-weight: 500;
   line-height: 1.2;
   color: white;
   margin: 0;

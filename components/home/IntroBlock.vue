@@ -85,9 +85,10 @@ export default {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0;
-  font-size: 74px;
+  font-size: 70px;
   line-height: 1.2;
   margin-top: 0;
+  font-weight: 500;
 
   @include device-portrait {
     position: absolute;
@@ -138,7 +139,7 @@ export default {
 }
 
 ::v-deep .intro-block__text span {
-  font-weight: bold;
   color: $blue;
+  font-weight: 500;
 }
 </style>

@@ -1,21 +1,7 @@
 @import 'colors';
+@import 'fonts';
 @import 'mixins';
 @import 'swiper/css/swiper.css';
-
-@font-face {
-  font-family: 'Oswald';
-  src: url('~assets/fonts/Oswald.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Rubik';
-  src: url('~assets/fonts/Rubik.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Rubik';
-  font-style: italic;
-  src: url('~assets/fonts/Rubik-Italic.ttf') format('truetype');
-}
 
 html,
 body {
@@ -39,4 +25,5 @@ li {
   color: $black;
   font-family: 'Rubik', sans-serif;
   letter-spacing: 0;
+  font-weight: 400;
 }

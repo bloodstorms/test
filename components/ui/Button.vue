@@ -135,6 +135,7 @@ button {
   border: 3px solid var(--button-border-color);
   border-radius: 8px;
   font-family: 'Rubik', sans-serif;
+  font-weight: 500;
   height: 45px;
   justify-content: center;
   align-items: center;
