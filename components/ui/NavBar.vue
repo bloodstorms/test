@@ -79,7 +79,9 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   @include phone {
     padding: 15px 20px;

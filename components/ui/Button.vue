@@ -144,6 +144,8 @@ button {
   transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.2, 1),
     color 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
   transform: translateZ(0);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     border-color: var(--button-border-color--hover);

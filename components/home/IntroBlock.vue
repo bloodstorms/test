@@ -71,6 +71,10 @@ export default {
   }
   @include phone {
     padding: 20px;
+    padding-bottom: 40px;
+  }
+  @include tablet-portrait {
+    padding-bottom: 60px;
   }
   @include tablet-landscape {
     padding: 30px;
