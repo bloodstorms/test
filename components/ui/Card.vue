@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :style="`margin: ${margin}`">
+  <div class="card">
     <img
       class="card__image"
       :src="require(`@/assets/img/cards/${imageName}.jpg`)"
@@ -36,10 +36,6 @@ export default {
       type: String,
       default: '',
     },
-    margin: {
-      type: String,
-      default: '0',
-    },
   },
 };
 </script>
@@ -49,14 +45,8 @@ export default {
 
 .card {
   position: relative;
-  height: 500px;
-  width: 470px;
+  width: 100%;
   flex-shrink: 0;
-
-  @include phone {
-    height: 500px;
-    width: 100%;
-  }
 }
 
 .card__image {
@@ -70,7 +60,7 @@ export default {
   right: 20px;
 
   @include phone {
-    top: 230px;
+    display: none;
   }
 }
 

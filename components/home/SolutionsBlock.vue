@@ -2,21 +2,6 @@
   <div id="solutions" class="solutions-block">
     <h2 v-sanitized-html="title" class="solutions-block__text"></h2>
     <Button
-      v-if="canSwipeRight"
-      class="
-        solutions-block__scroll-button solutions-block__scroll-button--right
-      "
-      icon="chevron-right"
-      backgroundColor="white"
-      backgroundColorHover="black"
-      borderColor="black"
-      borderColorHover="black"
-      iconColor="black"
-      iconColorHover="white"
-      @click="swipeRight"
-    />
-    <Button
-      v-else
       class="
         solutions-block__scroll-button solutions-block__scroll-button--left
       "
@@ -27,33 +12,47 @@
       borderColorHover="black"
       iconColor="black"
       iconColorHover="white"
-      @click="swipeLeft"
     />
-    <div ref="scrollableContent" class="solutions-block__cards">
-      <Card
-        v-for="card in cardInfos"
-        :key="card.title"
-        :imageName="card.image"
-        :title="card.title"
-        :description="card.description"
-        :buttonText="card.button"
-        margin="0 100px 0 0"
-      />
+    <Button
+      class="
+        solutions-block__scroll-button solutions-block__scroll-button--right
+      "
+      icon="chevron-right"
+      backgroundColor="white"
+      backgroundColorHover="black"
+      borderColor="black"
+      borderColorHover="black"
+      iconColor="black"
+      iconColorHover="white"
+    />
+    <div v-swiper:mySwiper="swiperOption">
+      <div class="swiper-wrapper">
+        <div v-for="card in cardInfos" :key="card.title" class="swiper-slide">
+          <Card
+            ref="card"
+            :imageName="card.image"
+            :title="card.title"
+            :description="card.description"
+            :buttonText="card.button"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
+import VueAwesomeSwiper from 'vue-awesome-swiper';
 
 import Button from '@/components/ui/Button.vue';
 import Card from '@/components/ui/Card.vue';
-import scrollTo from '@/utils/scrollTo';
 import VSanitizedHTML from '@/directives/v-sanitized-html';
 
 import { title, cardInfos } from '@/text-contents/solutions';
 
 Vue.use(VSanitizedHTML);
+Vue.use(VueAwesomeSwiper);
 
 export default {
   name: 'SolutionsBlock',
@@ -63,20 +62,18 @@ export default {
   },
   data() {
     return {
-      canSwipeRight: true,
       cardInfos,
       title,
+      swiperOption: {
+        slidesPerView: 'auto',
+        watchSlidesProgress: true,
+        threshold: 2,
+        navigation: {
+          nextEl: '.solutions-block__scroll-button--right',
+          prevEl: '.solutions-block__scroll-button--left',
+        },
+      },
     };
-  },
-  methods: {
-    swipeLeft() {
-      scrollTo(this.$refs.scrollableContent, -1500, 800);
-      this.canSwipeRight = true;
-    },
-    swipeRight() {
-      scrollTo(this.$refs.scrollableContent, 1500, 800);
-      this.canSwipeRight = false;
-    },
   },
 };
 </script>
@@ -87,17 +84,17 @@ export default {
 
 .solutions-block {
   background-color: $grey-extralight;
-  padding: 120px 0 60px 120px;
+  padding: 120px 120px 60px 120px;
   position: relative;
 
   @include phone {
-    padding: 20px 0 50px 20px;
+    padding: 40px 20px 50px 20px;
   }
   @include tablet-portrait {
-    padding: 40px 0 50px 40px;
+    padding: 80px 40px 50px 40px;
   }
   @include tablet-landscape {
-    padding: 80px 0 60px 80px;
+    padding: 80px 80px 60px 80px;
   }
 }
 
@@ -106,10 +103,11 @@ export default {
   letter-spacing: 0;
   font-size: 50px;
   line-height: 1.2;
-  margin: 0;
+  margin: 0 0 70px 0;
 
   @include phone {
     font-size: 23px;
+    margin: 0 0 50px 0;
   }
   @include tablet-portrait {
     font-size: 40px;
@@ -127,6 +125,8 @@ export default {
   padding: 14px;
   cursor: pointer;
   z-index: 1;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .solutions-block__scroll-button--right {
@@ -134,11 +134,11 @@ export default {
   right: 120px;
 
   @include phone {
-    top: 300px;
-    right: 20px;
+    top: 130px;
+    right: 5px;
   }
   @include tablet-portrait {
-    top: 170px;
+    top: 210px;
     right: 40px;
   }
   @include tablet-landscape {
@@ -148,26 +148,57 @@ export default {
 }
 .solutions-block__scroll-button--left {
   top: 300px;
-  right: 120px;
+  right: 200px;
 
   @include phone {
-    top: 300px;
-    right: 20px;
+    top: 130px;
+    right: 70px;
   }
   @include tablet-portrait {
-    top: 170px;
-    right: 40px;
+    top: 210px;
+    right: 110px;
   }
   @include tablet-landscape {
     top: 235px;
-    right: 80px;
+    right: 160px;
   }
 }
 
-.solutions-block__cards {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
-  margin-top: 70px;
+::v-deep .card {
+  margin-right: 100px;
+
+  @include phone {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+// Swiper styles
+.swiper-container {
+  overflow: visible;
+}
+
+.swiper-slide {
+  width: 50%;
+  padding-right: 7%;
+
+  @include phone {
+    width: 100%;
+    padding-right: 10%;
+  }
+  @include tablet-portrait {
+    padding-right: 5%;
+  }
+  @include tablet-landscape {
+    padding-right: 5%;
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 </style>
