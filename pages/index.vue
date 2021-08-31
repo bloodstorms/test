@@ -6,6 +6,7 @@
     <KeywordsBlock />
     <ExpertiseBlock />
     <AboutBlock />
+    <FooterBlock />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import SolutionsBlock from '@/components/home/SolutionsBlock.vue';
 import KeywordsBlock from '@/components/home/KeywordsBlock.vue';
 import ExpertiseBlock from '@/components/home/ExpertiseBlock.vue';
 import AboutBlock from '@/components/home/AboutBlock.vue';
+import FooterBlock from '@/components/home/FooterBlock.vue';
 import NavBar from '@/components/ui/NavBar.vue';
 
 export default {
@@ -26,6 +28,7 @@ export default {
     KeywordsBlock,
     ExpertiseBlock,
     AboutBlock,
+    FooterBlock,
   },
 };
 </script>
