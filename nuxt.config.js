@@ -46,7 +46,32 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['vue2-smooth-scroll', 'vue-awesome-swiper', 'swiper'],
+    // transpile: [
+    //   'vue2-smooth-scroll',
+    //   'vue-awesome-swiper',
+    //   'swiper',
+    //   'sanitize-html',
+    //   'dom7',
+    // ],
+    babel: {
+      presets: [
+        [
+          require.resolve('@nuxt/babel-preset-app'),
+          {
+            corejs: { version: 3 },
+            targets: { ie: 11 },
+          },
+        ],
+      ],
+      plugins: [
+        [
+          '@babel/plugin-transform-runtime',
+          {
+            regenerator: true,
+          },
+        ],
+      ],
+    },
   },
 
   // Github pages

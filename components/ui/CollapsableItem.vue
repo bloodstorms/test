@@ -50,13 +50,12 @@
 // import { ResizeObserver } from '@juggle/resize-observer';
 import Vue from 'vue';
 
-import VSanitizedHTML from '@/directives/v-sanitized-html';
-
-import Button from '@/components/ui/Button.vue';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+import Button from '@/components/ui/Button.vue';
+import VSanitizedHTML from '@/directives/v-sanitized-html';
 
 library.add(faPlus, faMinus);
 
@@ -64,7 +63,6 @@ Vue.use(VSanitizedHTML);
 
 export default {
   name: 'CollapsableItem',
-  directives: { VSanitizedHTML },
   components: {
     FontAwesomeIcon,
     Button,
