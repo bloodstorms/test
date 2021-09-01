@@ -1,11 +1,13 @@
 <template>
   <div class="card">
-    <img
-      class="card__image"
-      :src="require(`@/assets/img/cards/${imageName}.jpg`)"
-      :alt="imageName"
-    />
-    <Button class="card__button" :text="buttonText" fontWeight="bold" />
+    <div class="card__image-container">
+      <img
+        class="card__image"
+        :src="require(`@/assets/img/cards/${imageName}.jpg`)"
+        :alt="imageName"
+      />
+      <Button class="card__button" :text="buttonText" fontWeight="bold" />
+    </div>
     <h2 class="card__title">{{ title }}</h2>
     <p class="card__description">{{ description }}</p>
   </div>
@@ -44,9 +46,12 @@ export default {
 @import '~/assets/styles/mixins';
 
 .card {
-  position: relative;
   width: 100%;
   flex-shrink: 0;
+}
+
+.card__image-container {
+  position: relative;
 }
 
 .card__image {
@@ -56,12 +61,8 @@ export default {
 
 .card__button {
   position: absolute;
-  top: 320px;
+  bottom: -18px;
   right: 20px;
-
-  @include phone {
-    display: none;
-  }
 }
 
 .card__title {
