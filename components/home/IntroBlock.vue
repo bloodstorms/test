@@ -35,7 +35,7 @@ export default {
 
 .intro-block {
   display: flex;
-  padding-top: 65px;
+  position: relative;
 
   @include device-portrait {
     flex-direction: column;
@@ -97,12 +97,12 @@ export default {
   }
   @include phone {
     font-size: 45px;
-    top: 240px;
+    top: 175px;
     left: 20px;
   }
   @include tablet-portrait {
     font-size: 65px;
-    top: 420px;
+    top: 355px;
     left: 40px;
   }
   @include tablet-landscape {

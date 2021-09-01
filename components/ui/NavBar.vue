@@ -1,18 +1,38 @@
 <template>
   <div>
     <nav id="desktop-nav">
-      <a v-smooth-scroll class="logo-link" href="#accueil">
+      <a
+        v-smooth-scroll="{ offset: -65, container: '#container' }"
+        class="logo-link"
+        href="#accueil"
+      >
         <img class="logo" src="~/assets/img/logo.png" alt="Logo" />
       </a>
       <div class="links-container">
-        <a v-smooth-scroll class="nav-link" href="#accueil">Accueil</a>
-        <a v-smooth-scroll class="nav-link" href="#savoir-faire"
+        <a
+          v-smooth-scroll="{ offset: -65, container: '#container' }"
+          class="nav-link"
+          href="#accueil"
+          >Accueil</a
+        >
+        <a
+          v-smooth-scroll="{ offset: -65, container: '#container' }"
+          class="nav-link"
+          href="#savoir-faire"
           >Savoir-faire</a
         >
-        <a v-smooth-scroll class="nav-link" href="#a-propos"
+        <a
+          v-smooth-scroll="{ offset: -65, container: '#container' }"
+          class="nav-link"
+          href="#a-propos"
           >À propos de nous</a
         >
-        <a v-smooth-scroll class="nav-link" href="#contact">Contact</a>
+        <a
+          v-smooth-scroll="{ offset: -65, container: '#container' }"
+          class="nav-link"
+          href="#contact"
+          >Contact</a
+        >
         <Button
           text="Formulaire"
           :icon="['far', 'comment-dots']"
@@ -26,20 +46,65 @@
       </div>
     </nav>
 
-    <nav id="phone-nav">
+    <nav id="phone-nav" :class="{ active: isNavOpened }">
       <a class="logo-link" href="#accueil">
         <img class="logo" src="~/assets/img/logo.png" alt="Logo" />
       </a>
-      <div id="hamburger">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <div class="links-container">
-          <a class="nav-link" href="#accueil">Accueil</a>
-          <a class="nav-link" href="#savoir-faire">Savoir-faire</a>
-          <a class="nav-link" href="#a-propos">À propos de nous</a>
-          <a class="nav-link" href="#contact">Contact</a>
+      <div id="hamburger" @click="click">
+        <span class="hamburger-stick hamburger-stick--top"></span>
+        <span class="hamburger-stick hamburger-stick--middle"></span>
+        <span class="hamburger-stick hamburger-stick--bottom"></span>
+      </div>
+      <div class="nav-container">
+        <div class="nav-links">
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="nav-link"
+            href="#accueil"
+            @click="click"
+            >Accueil</a
+          >
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="nav-link"
+            href="#savoir-faire"
+            @click="click"
+            >Savoir-faire</a
+          >
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="nav-link"
+            href="#a-propos"
+            @click="click"
+            >À propos de nous</a
+          >
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="nav-link"
+            href="#contact"
+            @click="click"
+            >Contact</a
+          >
+        </div>
+        <div class="other-links">
+          <a class="nav-link" href="">Tarifs</a>
+          <a class="nav-link" href="">Glossaire</a>
+          <a class="nav-link" href="">Mentions Légales</a>
+        </div>
+        <div class="bottom-container">
+          <p class="nav-slogan">
+            Réglons ensemble votre litige,<br />simplement
+          </p>
+          <Button
+            text="Formulaire"
+            :icon="['far', 'comment-dots']"
+            color="white"
+            colorHover="black"
+            backgroundColor="blue"
+            backgroundColorHover="green"
+            iconColor="green"
+            iconColorHover="blue"
+          />
         </div>
       </div>
     </nav>
@@ -58,6 +123,16 @@ export default {
   name: 'NavBar',
   components: {
     Button,
+  },
+  data() {
+    return {
+      isNavOpened: false,
+    };
+  },
+  methods: {
+    click() {
+      this.isNavOpened = !this.isNavOpened;
+    },
   },
 };
 </script>
@@ -80,6 +155,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 2;
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.5);
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
@@ -118,68 +194,48 @@ nav {
 
 // Phone
 #phone-nav {
+  &.active {
+    .hamburger-stick {
+      background: $blue;
+    }
+    .hamburger-stick--top {
+      opacity: 1;
+      transform: rotate(45deg) translate(4px, -3px);
+    }
+    .hamburger-stick--middle {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    .hamburger-stick--bottom {
+      transform: rotate(-45deg) translate(2px, 2px);
+    }
+    .nav-container {
+      transform: none;
+    }
+  }
+
   #hamburger {
     display: block;
-    position: relative;
-    top: 4px;
-    right: 0px;
-    z-index: 1;
-    -webkit-user-select: none;
     user-select: none;
-    width: 35px;
-    margin-left: auto;
   }
 
-  input {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    right: -5px;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 10;
-    -webkit-touch-callout: none;
-  }
-
-  span {
+  .hamburger-stick {
     display: block;
     width: 33px;
     height: 3px;
-    margin-bottom: 6px;
+    margin: 6px 0;
     position: relative;
     background: $black;
     z-index: 1;
     transform-origin: 4px 0px;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
       background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-
-    &:first-child {
-      transform-origin: 0% 0%;
-    }
-    &:nth-last-child(2) {
-      transform-origin: 0% 100%;
-    }
+  }
+  .hamburger-stick--middle {
+    transform-origin: 50% 100%;
   }
 
-  input:checked ~ span {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: $blue;
-  }
-  input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-  input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-  }
-  input:checked ~ .links-container {
-    transform: none;
-  }
-
-  .links-container {
+  .nav-container {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -187,11 +243,34 @@ nav {
     left: 0;
     top: 65px;
     height: 100%;
-    padding: 40px 20px;
+    padding: 30px 20px;
     background: white;
     transform-origin: 0% 0%;
     transform: translate(100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 30px;
+  }
+
+  .other-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+
+    .nav-link {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+  }
+
+  .bottom-container {
+    position: absolute;
+    bottom: 100px;
   }
 
   .nav-link {

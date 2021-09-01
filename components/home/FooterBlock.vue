@@ -15,16 +15,28 @@
             footer-block__links-container footer-block__links-container--top
           "
         >
-          <a v-smooth-scroll class="footer-block__link" href="#accueil"
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="footer-block__link"
+            href="#accueil"
             >Accueil</a
           >
-          <a v-smooth-scroll class="footer-block__link" href="#savoir-faire"
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="footer-block__link"
+            href="#savoir-faire"
             >Savoir-faire</a
           >
-          <a v-smooth-scroll class="footer-block__link" href="#a-propos"
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="footer-block__link"
+            href="#a-propos"
             >À propos de nous</a
           >
-          <a v-smooth-scroll class="footer-block__link" href="#contact"
+          <a
+            v-smooth-scroll="{ offset: -65, container: '#container' }"
+            class="footer-block__link"
+            href="#contact"
             >Contact</a
           >
         </div>
@@ -37,9 +49,9 @@
           <a class="footer-block__link footer-block__link--title"
             >Autres liens</a
           >
-          <a class="footer-block__link" href="">Lorem ipsum</a>
-          <a class="footer-block__link" href="">Dolor sit amet</a>
-          <a class="footer-block__link" href="">Consectetur</a>
+          <a class="footer-block__link" href="">Tarifs</a>
+          <a class="footer-block__link" href="">Glossaire</a>
+          <a class="footer-block__link" href="">Mentions Légales</a>
         </div>
         <!-- right bottom -->
         <div
@@ -61,6 +73,11 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import VueSmoothScroll from 'vue2-smooth-scroll';
+
+Vue.use(VueSmoothScroll);
+
 export default {
   name: 'FooterBlock',
   data() {
