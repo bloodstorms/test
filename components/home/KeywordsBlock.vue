@@ -14,15 +14,17 @@
     </h2>
     <div class="keywords-block__button-container">
       <p v-sanitized-html="text" class="keywords-block__text"></p>
-      <Button
-        :text="buttonText"
-        color="white"
-        colorHover="black"
-        backgroundColor="blue"
-        backgroundColorHover="green"
-        iconColor="green"
-        iconColorHover="blue"
-      />
+      <nuxt-link :to="{ path: 'form', query: { customer: 'private' } }">
+        <Button
+          :text="buttonText"
+          color="white"
+          colorHover="black"
+          backgroundColor="blue"
+          backgroundColorHover="green"
+          iconColor="green"
+          iconColorHover="blue"
+        />
+      </nuxt-link>
     </div>
   </div>
 </template>
