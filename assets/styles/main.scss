@@ -2,6 +2,7 @@
 @import 'fonts';
 @import 'mixins';
 @import 'swiper/dist/css/swiper.css';
+@import '@/node_modules/@braid/vue-formulate/themes/snow/snow';
 
 html,
 body {
@@ -19,7 +20,8 @@ body {
 #container {
   padding-top: 65px;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 * {

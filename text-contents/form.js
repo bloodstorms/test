@@ -11,8 +11,8 @@ export const text = `
     Comment ? En suivant les étapes ci-dessous :
   </p>
   <p>
-    1. Lorem ipsum dolor sit amet, consectetur elit
-    2. Lorem ipsum dolor sit amet, consectetur elit
+    1. Lorem ipsum dolor sit amet, consectetur elit<br/>
+    2. Lorem ipsum dolor sit amet, consectetur elit<br/>
     3. Lorem ipsum dolor sit amet, consectetur elit
   </p>
   <p>

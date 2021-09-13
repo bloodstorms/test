@@ -17,6 +17,7 @@
           class="collapsable-item__content-left"
           :class="{ only: !imageName }"
         >
+          <slot></slot>
           <div
             v-sanitized-html="contentText"
             class="collapsable-item__text"
