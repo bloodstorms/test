@@ -1,0 +1,87 @@
+[
+  {
+    "component": "div",
+    "class": "flex-wrapper",
+    "children": [
+      {
+        "name": "domain",
+        "type": "select",
+        "label": "Domaine du différend *",
+        "placeholder": "Selectionner...",
+        "options": [
+          "Automobile",
+          "Avarie",
+          "Transport de marchandises",
+          "Autre"
+        ],
+        "validation": "required"
+      },
+      {
+        "name": "object",
+        "type": "select",
+        "label": "Objet du différend *",
+        "placeholder": "Selectionner...",
+        "options": [
+          "VL",
+          "PL",
+          "Engin agricole",
+          "Moto",
+          "Cycles",
+          "Trottinette",
+          "Quad",
+          "Voiturette",
+          "Véhicule industriel",
+          "TP"
+        ],
+        "validation": "required"
+      }
+    ]
+  },
+  {
+    "component": "div",
+    "class": "flex-wrapper",
+    "children": [
+      {
+        "name": "category",
+        "type": "select",
+        "label": "Catégorie *",
+        "placeholder": "Selectionner...",
+        "options": [
+          "Mécanique",
+          "Carrosserie",
+          "Réparation",
+          "Contrôles techniques",
+          "Achat/Vente",
+          "Assurance",
+          "Recours",
+          "Autres"
+        ],
+        "validation": "required"
+      }
+    ]
+  },
+  {
+    "component": "div",
+    "class": "flex-wrapper",
+    "children": [
+      {
+        "name": "subject",
+        "label": "Sujet du litige *",
+        "type": "textarea",
+        "validation": "required",
+        "maxlength": 3000,
+        "help": "Max 3000 caractères"
+      }
+    ]
+  },
+  {
+    "component": "div",
+    "class": "flex-wrapper",
+    "children": [
+      {
+        "type": "submit",
+        "label": "Étape suivante"
+      }
+    ]
+  }
+]

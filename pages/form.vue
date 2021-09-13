@@ -1,27 +1,99 @@
 <template>
   <div id="form">
-    <div class="form__left"></div>
-    <div class="form__right">
-      <h1 v-sanitized-html="title" class="form__title"></h1>
-      <div v-sanitized-html="text" class="form__text"></div>
+    <div class="form__intro">
+      <div class="form__left"></div>
+      <div class="form__right">
+        <h1 v-sanitized-html="title" class="form__title"></h1>
+        <div v-sanitized-html="text" class="form__text"></div>
+      </div>
+    </div>
+    <div class="form__content">
+      <div class="form__accordion">
+        <CollapsableItem
+          :showContent="shouldDisplayIdentity"
+          title="Identity"
+          @clicked="toggleContent('identity')"
+        >
+          <FormulateForm
+            v-model="identityValues"
+            :schema="identitySchema"
+            @submit="submitIdentity"
+          />
+        </CollapsableItem>
+        <CollapsableItem
+          :showContent="shouldDisplayLitigation"
+          title="Litigation"
+          @clicked="toggleContent('litigation')"
+        >
+          <FormulateForm
+            v-model="litigationValues"
+            :schema="litigationSchema"
+            @submit="submitLitigation"
+          />
+        </CollapsableItem>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
+import VueFormulate from '@braid/vue-formulate';
+import { fr } from '@braid/vue-formulate-i18n';
 import { title, text } from '@/text-contents/form';
+import identitySchema from '@/json-schemas/identity-schema.json';
+import litigationSchema from '@/json-schemas/litigation-schema.json';
+import CollapsableItem from '@/components/ui/CollapsableItem.vue';
+
+Vue.use(VueFormulate, {
+  plugins: [fr],
+  locale: 'fr',
+});
 
 export default {
   name: 'Form',
-  components: {},
+  components: { CollapsableItem },
   data() {
     return {
       title,
       text,
+      identityValues: {},
+      identitySchema,
+      isIdentityCompleted: false,
+      litigationValues: {},
+      litigationSchema,
+      isLitigationCompleted: false,
+      shouldDisplayIdentity: true,
+      shouldDisplayLitigation: false,
     };
   },
   created() {
     console.log(this.$route.query.customer);
+  },
+  methods: {
+    toggleContent(type) {
+      switch (type) {
+        case 'identity':
+          this.shouldDisplayIdentity = !this.shouldDisplayIdentity;
+          break;
+        case 'litigation':
+          if (this.isIdentityCompleted) {
+            this.shouldDisplayLitigation = !this.shouldDisplayLitigation;
+          }
+          break;
+        default:
+          break;
+      }
+    },
+    submitIdentity() {
+      this.shouldDisplayIdentity = false;
+      this.isIdentityCompleted = true;
+      this.shouldDisplayLitigation = true;
+    },
+    submitLitigation() {
+      this.shouldDisplayLitigation = false;
+      this.isLitigationCompleted = true;
+    },
   },
 };
 </script>
@@ -30,7 +102,7 @@ export default {
 @import '~/assets/styles/colors';
 @import '~/assets/styles/mixins';
 
-#form {
+.form__intro {
   display: flex;
   position: relative;
 
@@ -121,6 +193,28 @@ export default {
   }
 }
 
+.form__content {
+  background-color: $blue-extralight;
+  padding: 80px 10%;
+
+  @include phone {
+    padding: 80px 20px;
+  }
+  @include tablet-portrait {
+    padding: 80px 40px;
+  }
+  @include tablet-landscape {
+    padding: 80px 80px;
+  }
+}
+
+.form__accordion {
+  background-color: white;
+  box-shadow: 0 0 4px -2px;
+  display: flex;
+  flex-direction: column;
+}
+
 ::v-deep .form__text p {
   margin: 40px 0;
 
@@ -135,8 +229,98 @@ export default {
   }
 }
 
+::v-deep .collapsable-item {
+  background-color: white;
+}
+
 ::v-deep .form__text span {
   color: $blue;
   font-weight: 500;
+}
+
+::v-deep .flex-wrapper {
+  display: flex;
+}
+::v-deep .formulate-input {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+::v-deep .formulate-input-element:not([data-type='submit']) {
+  background-color: #f5f9fb;
+}
+::v-deep .formulate-input-element textarea {
+  resize: none;
+  height: 250px;
+}
+::v-deep .formulate-input-element--textarea {
+  max-width: none;
+}
+::v-deep button[type='submit'] {
+  display: inline-flex;
+  position: relative;
+  background-color: $blue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.2, 1),
+    color 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+  transform: translateZ(0);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  span {
+    position: relative;
+  }
+
+  &:hover {
+    color: black;
+
+    ::before {
+      transform: scaleX(1);
+      transform-origin: center left;
+    }
+
+    .icon {
+      color: $blue;
+    }
+  }
+}
+
+::v-deep button[type='submit']::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+  transform-origin: center right;
+  background-color: $green;
+}
+
+::v-deep button[type='submit']:hover {
+  &::before {
+    transform: scaleX(1);
+    transform-origin: center left;
+  }
+  .icon {
+    color: $blue;
+  }
+}
+
+::v-deep .formulate-input:last-child {
+  margin-bottom: 1.5em;
+}
+::v-deep .formulate-input-element::before {
+  border-top-color: $black !important;
 }
 </style>
