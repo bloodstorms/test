@@ -28,7 +28,7 @@
         >
           <FormulateForm
             v-model="partiesValues"
-            :schema="partiesSchema"
+            :schema="conditionalPartiesSchema"
             @submit="submitParties"
           />
         </CollapsableItem>
@@ -84,6 +84,14 @@ export default {
       shouldDisplayParties: false,
       partiesHeight: 0,
     };
+  },
+  computed: {
+    conditionalPartiesSchema() {
+      if (this.partiesValues.lawyer !== 'Oui') {
+        return this.partiesSchema.filter(({ name }) => name !== 'lawyer-form');
+      }
+      return this.partiesSchema;
+    },
   },
   created() {
     console.log(this.$route.query.customer);

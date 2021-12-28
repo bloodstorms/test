@@ -1,7 +1,7 @@
 [
   {
     "type": "group",
-    "name": "accounts",
+    "name": "party",
     "validation": "min:1,length",
     "repeatable": true,
     "add-label": "+ Ajouter",
@@ -38,6 +38,107 @@
           }
         ]
       },
+      {
+        "component": "div",
+        "class": "flex-wrapper",
+        "children": [
+          {
+            "name": "firstname",
+            "label": "Prénom *",
+            "type": "text",
+            "validation": "required"
+          },
+          {
+            "name": "lastname",
+            "label": "Nom *",
+            "type": "text",
+            "validation": "required"
+          }
+        ]
+      },
+      {
+        "component": "div",
+        "class": "flex-wrapper",
+        "children": [
+          {
+            "name": "phone",
+            "type": "tel",
+            "label": "Numéro de téléphone *",
+            "inputmode": "numeric",
+            "validation": "required|number"
+          },
+          {
+            "name": "email",
+            "type": "email",
+            "label": "Adresse e-mail *",
+            "validation": "required|email"
+          }
+        ]
+      },
+      {
+        "component": "div",
+        "class": "flex-wrapper",
+        "children": [
+          {
+            "name": "address",
+            "label": "Adresse *",
+            "type": "text",
+            "validation": "required"
+          },
+          {
+            "name": "complement",
+            "label": "Complément (optionnel)",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "component": "div",
+        "class": "flex-wrapper",
+        "children": [
+          {
+            "name": "zip",
+            "type": "text",
+            "label": "Code postal *",
+            "inputmode": "numeric",
+            "validation": "required|number"
+          },
+          {
+            "name": "city",
+            "label": "Ville *",
+            "type": "text",
+            "validation": "required"
+          }
+        ]
+      },
+      {
+        "component": "div",
+        "class": "flex-wrapper",
+        "children": [
+          {
+            "name": "country",
+            "label": "Pays *",
+            "type": "text",
+            "value": "France",
+            "validation": "required"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "lawyer",
+    "type": "select",
+    "label": "Vous faites-vous assister par un avocat ? *",
+    "options": ["Non", "Oui"],
+    "validation": "required"
+  },
+  {
+    "type": "group",
+    "name": "lawyer-form",
+    "validation": "min:1,length",
+    "value": [{}],
+    "children": [
       {
         "component": "div",
         "class": "flex-wrapper",
