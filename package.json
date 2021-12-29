@@ -22,6 +22,7 @@
     "@juggle/resize-observer": "^3.3.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
+    "@sum.cumo/vue-browserupdate": "^3.0.1",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.8",
@@ -46,6 +47,6 @@
     "node-sass": "^7.0.1",
     "prettier": "^2.5.1",
     "sass": "^1.45.1",
-    "sass-loader": "12.4.0"
+    "sass-loader": "^10"
   }
 }

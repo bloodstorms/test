@@ -11,5 +11,6 @@ module.exports = {
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
   rules: {
     'vue/attribute-hyphenation': 'off',
+    'vue/multi-word-component-names': 'off',
   },
 };
