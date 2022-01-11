@@ -892,12 +892,12 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime-corejs3@^7.16.5":
-  version "7.16.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.16.5.tgz#9057d879720c136193f0440bc400088212a74894"
-  integrity sha512-F1pMwvTiUNSAM8mc45kccMQxj31x3y3P+tA/X8hKNWp3/hUsxdGxZ3D3H8JIkxtfA8qGkaBTKvcmvStaYseAFw==
+"@babel/runtime-corejs3@^7.16.8":
+  version "7.16.8"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs3/-/runtime-corejs3-7.16.8.tgz#ea533d96eda6fdc76b1812248e9fbd0c11d4a1a7"
+  integrity sha512-3fKhuICS1lMz0plI5ktOE/yEtBRMVxplzRkdn6mJQ197XiY0JnrzYV0+Mxozq3JZ8SBV9Ecurmw1XsGbwOf+Sg==
   dependencies:
-    core-js-pure "^3.19.0"
+    core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@^7.14.0", "@babel/runtime@^7.8.4":
@@ -1465,6 +1465,13 @@
   version "1.0.0-next.20"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.20.tgz#111b5db0f501aa89b05076fa31f0ea0e0c292cd3"
   integrity sha512-88p7+M0QGxKpmnkfXjS4V26AnoC/eiqZutE8GLdaI5X12NY75bXSdTY9NkmYb2Xyk1O+MmkuO6Frmsj84V6I8Q==
+
+"@sum.cumo/vue-browserupdate@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sum.cumo/vue-browserupdate/-/vue-browserupdate-3.0.1.tgz#5cc5fc7b7fff3b61b25a3f10a8c98b6a11236ff8"
+  integrity sha512-xAAmvd1wq+gwoSwdNoO9jQpQAhQI71QxIC+xTsY7eTVVEPz68AZ/JSrrcTat7mkPjjgWmO1xI6+4OCj56CyBWg==
+  dependencies:
+    browser-update "^3.3.21"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2401,6 +2408,11 @@ brorand@^1.0.1, brorand@^1.1.0:
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
 
+browser-update@^3.3.21:
+  version "3.3.37"
+  resolved "https://registry.yarnpkg.com/browser-update/-/browser-update-3.3.37.tgz#f99181dc0b9c494c4356809cbec8f70cc4742098"
+  integrity sha512-6PIEXMYAajv6u2H89Z39gQJ0gjwZ0SZkqvsJnvt+9nHtBPdRUpp4X3HWMJX3zN2bKlX4FgAkXzkPdiOOv7sP5Q==
+
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/browserify-aes/-/browserify-aes-1.2.0.tgz#326734642f403dabc3003209853bb70ad428ef48"
@@ -3075,10 +3087,10 @@ core-js-compat@^3.18.0:
     browserslist "^4.19.1"
     semver "7.0.0"
 
-core-js-pure@^3.19.0:
-  version "3.20.1"
-  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.20.1.tgz#f7a2c62f98de83e4da8fca7b78846d3a2f542145"
-  integrity sha512-yeNNr3L9cEBwNy6vhhIJ0nko7fE7uFO6PgawcacGt2VWep4WqQx0RiqlkgSP7kqUMC1IKdfO9qPeWXcUheHLVQ==
+core-js-pure@^3.20.2:
+  version "3.20.2"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.20.2.tgz#5d263565f0e34ceeeccdc4422fae3e84ca6b8c0f"
+  integrity sha512-CmWHvSKn2vNL6p6StNp1EmMIfVY/pqn3JLAjfZQ8WZGPOlGoO92EkX9/Mk81i6GxvoPXjUqEQnpM3rJ5QxxIOg==
 
 core-js@3:
   version "3.20.1"
