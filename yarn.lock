@@ -1466,6 +1466,13 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.20.tgz#111b5db0f501aa89b05076fa31f0ea0e0c292cd3"
   integrity sha512-88p7+M0QGxKpmnkfXjS4V26AnoC/eiqZutE8GLdaI5X12NY75bXSdTY9NkmYb2Xyk1O+MmkuO6Frmsj84V6I8Q==
 
+"@sum.cumo/vue-browserupdate@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@sum.cumo/vue-browserupdate/-/vue-browserupdate-3.0.1.tgz#5cc5fc7b7fff3b61b25a3f10a8c98b6a11236ff8"
+  integrity sha512-xAAmvd1wq+gwoSwdNoO9jQpQAhQI71QxIC+xTsY7eTVVEPz68AZ/JSrrcTat7mkPjjgWmO1xI6+4OCj56CyBWg==
+  dependencies:
+    browser-update "^3.3.21"
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -2400,6 +2407,11 @@ brorand@^1.0.1, brorand@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
+
+browser-update@^3.3.21:
+  version "3.3.38"
+  resolved "https://registry.yarnpkg.com/browser-update/-/browser-update-3.3.38.tgz#ae9f999cd4931a1c24edfd56d0c50d4ddacd097e"
+  integrity sha512-2mLnlL25WLBP6pISo8dMoK7J8hKoLbgQtCQ+/g67T/SHvy+NpcvNPxqlpbwLF/mceIWTK34s24MUHmLcUrsKig==
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -8376,10 +8388,10 @@ sass-loader@^10:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.45.1:
-  version "1.45.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.45.1.tgz#fa03951f924d1ba5762949567eaf660e608a1ab0"
-  integrity sha512-pwPRiq29UR0o4X3fiQyCtrESldXvUQAAE0QmcJTpsI4kuHHcLzZ54M1oNBVIXybQv8QF2zfkpFcTxp8ta97dUA==
+sass@^1.49.8:
+  version "1.49.8"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.49.8.tgz#9bbbc5d43d14862db07f1c04b786c9da9b641828"
+  integrity sha512-NoGOjvDDOU9og9oAxhRnap71QaTjjlzrvLnKecUJ3GxhaQBrV6e7gPuSPF28u1OcVAArVojPAe4ZhOXwwC4tGw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
