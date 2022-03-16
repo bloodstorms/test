@@ -30,7 +30,7 @@
         <a
           v-smooth-scroll="{ offset: -65, container: '#container' }"
           class="nav-link"
-          href="#contact"
+          href="#footer"
           >Contact</a
         >
         <Button
