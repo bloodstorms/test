@@ -80,7 +80,7 @@
     "children": [
       {
         "type": "submit",
-        "label": "Étape suivante"
+        "label": "Soumettre"
       }
     ]
   }
