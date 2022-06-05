@@ -33,7 +33,7 @@
           href="#footer"
           >Contact</a
         >
-        <nuxt-link :to="{ path: 'form', query: { customer: 'private' } }">
+        <nuxt-link :to="{ path: 'form' }">
           <Button
             text="Formulaire"
             :icon="['far', 'comment-dots']"

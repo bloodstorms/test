@@ -14,6 +14,7 @@ export const accordionInfos = [
       <p>Sit magni sunt non doloribus quibusdam ea necessitatibus eaque. Velquia molestiae ea soluta pariatur eum placeat velit.</p>
     `,
     button: 'formulaire pré-rempli',
+    buttonQuery: { customer: 'individual' },
     image: 'particulier',
   },
   {
@@ -30,6 +31,7 @@ export const accordionInfos = [
       <p>Sit magni sunt non doloribus quibusdam ea necessitatibus eaque. Velquia molestiae ea soluta pariatur eum placeat velit.</p>
     `,
     button: 'formulaire pré-rempli',
+    buttonQuery: { customer: 'professional' },
     image: 'societe',
   },
   {
@@ -46,6 +48,7 @@ export const accordionInfos = [
       <p>Sit magni sunt non doloribus quibusdam ea necessitatibus eaque. Velquia molestiae ea soluta pariatur eum placeat velit.</p>
     `,
     button: 'formulaire pré-rempli',
+    buttonQuery: { customer: 'insurer' },
     image: 'assureur',
   },
   {
@@ -62,6 +65,7 @@ export const accordionInfos = [
       <p>Sit magni sunt non doloribus quibusdam ea necessitatibus eaque. Velquia molestiae ea soluta pariatur eum placeat velit.</p>
     `,
     button: 'formulaire pré-rempli',
+    buttonQuery: { customer: 'law_professional' },
     image: 'droit',
   },
 ];

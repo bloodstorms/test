@@ -10,6 +10,7 @@
       :title="item.title"
       :contentText="item.text"
       :buttonText="item.button"
+      :buttonQuery="item.buttonQuery"
       :imageName="item.image"
       @heightUpdated="updateAccordionHeight"
       @clicked="collapsableItemClicked(item.id)"

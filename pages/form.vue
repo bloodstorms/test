@@ -57,6 +57,7 @@ import identitySchema from '@/json-schemas/identity-schema.json';
 import partiesSchema from '@/json-schemas/parties-schema.json';
 import litigationSchema from '@/json-schemas/litigation-schema.json';
 import CollapsableItem from '@/components/ui/CollapsableItem.vue';
+import { initFormWithInitialValues, initialIdentityValues } from '@/utils/form';
 
 Vue.use(VueFormulate, {
   plugins: [fr],
@@ -94,7 +95,17 @@ export default {
     },
   },
   created() {
-    console.log(this.$route.query.customer);
+    const { identityValues, partiesValues, litigationValues } = initFormWithInitialValues(
+      {
+        identityValues: this.identityValues,
+        partiesValues: this.partiesValues,
+        litigationValues: this.litigationValues,
+        initialValues: { identity: initialIdentityValues(this.$route.query.customer) },
+      },
+    );
+    this.identityValues = identityValues;
+    this.partiesValues = partiesValues;
+    this.litigationValues = litigationValues;
   },
   methods: {
     toggleContent(type) {

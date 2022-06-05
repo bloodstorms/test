@@ -22,8 +22,20 @@
             v-sanitized-html="contentText"
             class="collapsable-item__text"
           ></div>
+          <nuxt-link v-if="buttonText && buttonQuery" :to="{ path: 'form', query: buttonQuery }">
+            <Button
+              class="collapsable-item__button"
+              :text="buttonText"
+              color="white"
+              colorHover="black"
+              backgroundColor="blue"
+              backgroundColorHover="green"
+              iconColor="green"
+              iconColorHover="blue"
+            />
+          </nuxt-link>
           <Button
-            v-if="buttonText"
+            v-else-if="buttonText && !buttonQuery"
             class="collapsable-item__button"
             :text="buttonText"
             color="white"
@@ -85,6 +97,12 @@ export default {
       type: String,
       default: '',
     },
+    buttonQuery: {
+      type: Object,
+      default() {
+        return undefined;
+      },
+    },
     imageName: {
       type: String,
       default: '',
@@ -106,7 +124,7 @@ export default {
   },
 
   destroyed() {
-    this.observer.unobserve(this.$refs.content);
+    this.observer.unobserve(document.querySelector('.collapsable-item__content'));
   },
   methods: {
     toggleContent() {

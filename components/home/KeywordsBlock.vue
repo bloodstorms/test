@@ -14,7 +14,7 @@
     </h2>
     <div class="keywords-block__button-container">
       <p v-sanitized-html="text" class="keywords-block__text"></p>
-      <nuxt-link :to="{ path: 'form', query: { customer: 'private' } }">
+      <nuxt-link :to="{ path: 'form' }">
         <Button
           :text="buttonText"
           color="white"
