@@ -1,5 +1,5 @@
 <template>
-  <button :style="buttonStyle" @click="$emit('click')">
+  <button :style="buttonStyle" v-on="$listeners">
     <span v-if="text" class="text">{{ text }}</span>
     <FontAwesomeIcon v-if="icon" class="icon" :icon="icon" />
   </button>
