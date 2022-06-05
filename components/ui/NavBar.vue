@@ -33,16 +33,18 @@
           href="#footer"
           >Contact</a
         >
-        <Button
-          text="Formulaire"
-          :icon="['far', 'comment-dots']"
-          color="white"
-          colorHover="black"
-          backgroundColor="blue"
-          backgroundColorHover="green"
-          iconColor="green"
-          iconColorHover="blue"
-        />
+        <nuxt-link :to="{ path: 'form', query: { customer: 'private' } }">
+          <Button
+            text="Formulaire"
+            :icon="['far', 'comment-dots']"
+            color="white"
+            colorHover="black"
+            backgroundColor="blue"
+            backgroundColorHover="green"
+            iconColor="green"
+            iconColorHover="blue"
+          />
+        </nuxt-link>
       </div>
     </nav>
 
