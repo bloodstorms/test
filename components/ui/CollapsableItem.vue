@@ -48,7 +48,7 @@
 </template>
 
 <script>
-// import { ResizeObserver } from '@juggle/resize-observer';
+import { ResizeObserver } from '@juggle/resize-observer';
 import Vue from 'vue';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -93,16 +93,20 @@ export default {
   data() {
     return {
       contentHeight: 0,
+      observer: null,
     };
   },
   mounted() {
     this.contentHeight = this.$refs.content.offsetHeight;
 
-    // // observable height
-    // const resizeObserver = new ResizeObserver((entries) => {
-    //   this.$emit('heightUpdated', entries[0].contentRect.height);
-    // });
-    // resizeObserver.observe(this.$refs.grow);
+    this.observer = new ResizeObserver((entries) => {
+      this.contentHeight = entries[0].contentRect.height;
+    });
+    this.observer.observe(this.$refs.content);
+  },
+
+  destroyed() {
+    this.observer.unobserve(this.$refs.content);
   },
   methods: {
     toggleContent() {
